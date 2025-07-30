@@ -31,10 +31,10 @@ export function About() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "linear" }} // ease-in-out cubic-bezier
-            viewport={{ once: true }} // triggers earlier and only once
+            // initial={{ opacity: 0, x: -50 }}
+            // whileInView={{ opacity: 1, x: 0 }}
+            // transition={{ duration: 0.8, ease: "linear" }} // ease-in-out cubic-bezier
+            // viewport={{ once: true }} // triggers earlier and only once
           >
             <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground mb-6">
               Where Luxury Meets
@@ -73,11 +73,11 @@ export function About() {
 
           {/* Image */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "linear" }} // ease-in-out cubic-bezier
-            viewport={{ once: true }} // triggers earlier and only once
-            className="relative"
+            // initial={{ opacity: 0, x: 50 }}
+            // whileInView={{ opacity: 1, x: 0 }}
+            // transition={{ duration: 0.8, ease: "linear" }} // ease-in-out cubic-bezier
+            // viewport={{ once: true }} // triggers earlier and only once
+             className="relative"
           >
             <div className="relative rounded-2xl overflow-hidden shadow-elegant">
               <img
@@ -92,10 +92,10 @@ export function About() {
 
         {/* Features */}
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
+          // initial={{ opacity: 0, y: 50 }}
+          // whileInView={{ opacity: 1, y: 0 }}
+          // transition={{ duration: 0.8, delay: 0.2 }}
+          // viewport={{ once: true }}
           className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16"
         >
           {features.map((feature, index) => (

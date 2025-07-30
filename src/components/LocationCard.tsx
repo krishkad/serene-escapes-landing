@@ -17,11 +17,11 @@ interface LocationCardProps {
 export function LocationCard({ name, description, image, rating, price, href, features }: LocationCardProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      viewport={{ once: true }}
-      whileHover={{ y: -8 }}
+      // initial={{ opacity: 0, y: 30 }}
+      // whileInView={{ opacity: 1, y: 0 }}
+      // transition={{ duration: 0.6 }}
+      // viewport={{ once: true }}
+      // whileHover={{ y: -8 }}
       className="group"
     >
       <Card className="overflow-hidden border-0 shadow-elegant hover:shadow-luxury transition-all duration-300">
