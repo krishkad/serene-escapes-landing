@@ -11,7 +11,7 @@ export function Hero() {
   };
 
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -65,8 +65,8 @@ export function Hero() {
           <Button
             size="lg"
             variant="outline"
-            onClick={() => scrollToSection("#contact")}
-            className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm px-8 py-4 text-lg"
+            onClick={() => scrollToSection("#booking")}
+            className="border-white/30 bg-transparent hover:text-white text-white hover:bg-white/10 backdrop-blur-sm px-8 py-4 text-lg"
           >
             <Play className="mr-2 h-5 w-5" />
             Book Now

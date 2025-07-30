@@ -2,15 +2,28 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, MapPin, Phone, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { motion } from "framer-motion";
 
 const navItems = [
-  { name: "Home", href: "/" },
+  { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
   { name: "Locations", href: "#locations" },
   { name: "Gallery", href: "#gallery" },
   { name: "Contact", href: "#contact" },
+];
+const navItemsOther = [
+  { name: "Home", href: "/#home" },
+  { name: "About", href: "/#about" },
+  { name: "Locations", href: "/#locations" },
+  { name: "Gallery", href: "/#gallery" },
+  { name: "Contact", href: "/#contact" },
 ];
 
 const locations = [
@@ -34,7 +47,7 @@ export function Navigation() {
   };
 
   return (
-    <motion.nav 
+    <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className="fixed top-0 w-full bg-background/95 backdrop-blur-md border-b border-border z-50 shadow-soft"
@@ -61,8 +74,8 @@ export function Navigation() {
                 {item.name}
               </button>
             ))}
-            <Button 
-              size="sm" 
+            <Button
+              size="sm"
               className="bg-gradient-luxury hover:shadow-luxury transition-all duration-300"
             >
               Book Now
@@ -82,20 +95,33 @@ export function Navigation() {
                   Serenity Resorts
                 </SheetTitle>
               </SheetHeader>
-              
+
               <div className="flex flex-col mt-8 space-y-6">
-                {navItems.map((item) => (
-                  <button
-                    key={item.name}
-                    onClick={() => scrollToSection(item.href)}
-                    className="text-left text-lg font-medium text-foreground hover:text-primary transition-colors"
-                  >
-                    {item.name}
-                  </button>
-                ))}
-                
+                {location.pathname === "/"
+                  ? navItems.map((item) => (
+                      <button
+                        key={item.name}
+                        onClick={() => scrollToSection(item.href)}
+                        className="text-left text-lg font-medium text-foreground hover:text-primary transition-colors"
+                      >
+                        {item.name}
+                      </button>
+                    ))
+                  : navItemsOther.map((item) => (
+                      <Link
+                        key={item.name}
+                        to={item.href}
+                        onClick={() => setIsOpen(false)}
+                        className="text-left text-lg font-medium text-foreground hover:text-primary transition-colors"
+                      >
+                        {item.name}
+                      </Link>
+                    ))}
+
                 <div className="border-t border-border pt-6">
-                  <h3 className="font-semibold mb-4 text-foreground">Our Locations</h3>
+                  <h3 className="font-semibold mb-4 text-foreground">
+                    Our Locations
+                  </h3>
                   {locations.map((location) => (
                     <Link
                       key={location.name}
@@ -107,7 +133,7 @@ export function Navigation() {
                     </Link>
                   ))}
                 </div>
-                
+
                 <div className="border-t border-border pt-6 space-y-4">
                   <div className="flex items-center space-x-3 text-muted-foreground">
                     <Phone className="w-4 h-4" />
@@ -118,8 +144,8 @@ export function Navigation() {
                     <span>info@serenityresorts.com</span>
                   </div>
                 </div>
-                
-                <Button 
+
+                <Button
                   className="bg-gradient-luxury hover:shadow-luxury transition-all duration-300 mt-6"
                   onClick={() => setIsOpen(false)}
                 >

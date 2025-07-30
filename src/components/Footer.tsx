@@ -56,6 +56,8 @@ export function Footer() {
     }
   };
 
+  const year = new Date().getFullYear().toString();
+
   return (
     <footer className="bg-luxury-earth text-white">
       <div className="container mx-auto px-4 py-16">
@@ -148,7 +150,7 @@ export function Footer() {
         <div className="border-t border-gray-600 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-gray-300 text-sm">
-              © 2024 Serenity Resorts. All rights reserved. | Crafted with ❤️ for luxury experiences
+              © {year} Serenity Resorts. All rights reserved. | Crafted with ❤️ for luxury experiences
             </div>
             
             <div className="flex items-center space-x-4">
